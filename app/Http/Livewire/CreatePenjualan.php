@@ -22,6 +22,7 @@ class CreatePenjualan extends Component
         ] : [];
 
         return array_merge([
+            'penjualan.note' => 'required',
             'penjualan.price' => 'required',
             'penjualan.no_nota' => 'required|unique:penjualans,no_nota'
         ], $rules);
@@ -52,6 +53,7 @@ class CreatePenjualan extends Component
             ->update([
                 "price" => $this->penjualan->price,
                 "no_nota" => $this->penjualan->no_nota,
+                "note" => $this->penjualan->note,
                 "barang_id" => $barang,
             ]);
 

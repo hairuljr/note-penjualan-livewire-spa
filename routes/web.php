@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{BarangController, DashboardController, PenjualanController};
+use App\Http\Controllers\{BarangController, DashboardController, PembelianController, PenjualanController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +29,9 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/penjualan/new', "pages.penjualan.penjualan-new")->name('penjualan.new');
     Route::view('/penjualan/edit/{penjualanId}', "pages.penjualan.penjualan-edit")->name('penjualan.edit');
     Route::view('/penjualan/show/{penjualanId}', "pages.penjualan.penjualan-show")->name('penjualan.show');
+    
+    Route::get('/pembelian', [ PembelianController::class, "index_view" ])->name('pembelian');
+    Route::view('/pembelian/new', "pages.pembelian.pembelian-new")->name('pembelian.new');
+    Route::view('/pembelian/edit/{pembelianId}', "pages.pembelian.pembelian-edit")->name('pembelian.edit');
+    Route::view('/pembelian/show/{pembelianId}', "pages.pembelian.pembelian-show")->name('pembelian.show');
 });

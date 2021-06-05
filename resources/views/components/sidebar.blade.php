@@ -21,6 +21,19 @@ $links = [
     [
         "href" => [
             [
+                "section_text" => "Pembelian",
+                "section_list" => [
+                    ["href" => "pembelian", "text" => "Data Pembelian"],
+                    ["href" => "pembelian.new", "text" => "Buat Pembelian"]
+                ]
+            ]
+        ],
+        "text" => "Pembelian",
+        "is_multi" => true,
+    ],
+    [
+        "href" => [
+            [
                 "section_text" => "Penjualan",
                 "section_list" => [
                     ["href" => "penjualan", "text" => "Data Penjualan"],
@@ -42,7 +55,7 @@ $navigation_links = array_to_object($links);
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('dashboard') }}">
-                <img class="d-inline-block" width="32px" height="30.61px" src="" alt="">
+                <img class="d-inline-block" width="32px" height="30.61px" src="{{ asset('vendor/logo.png') }}" alt="Logo KJM" style="width: 50px;">
             </a>
         </div>
         @foreach ($navigation_links as $link)
@@ -58,9 +71,8 @@ $navigation_links = array_to_object($links);
                     $routes = collect($section->section_list)->map(function ($child) {
                         return Request::routeIs($child->href);
                     })->toArray();
-
                     $is_active = in_array(true, $routes);
-                    $icon = $section->section_text == 'Barang' ? 'chart-bar' : 'cash-register';
+                    $icon = $section->section_text == 'Barang' ? 'cubes' : ($section->section_text == 'Pembelian' ? 'shopping-basket' : 'cash-register');
                     @endphp
 
                     <li class="dropdown {{ ($is_active) ? 'active' : '' }}">
