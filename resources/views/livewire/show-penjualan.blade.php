@@ -18,13 +18,18 @@
                 @endphp
               @foreach ($barangs as $item)
                 <tr>
-                    <th scope="row">{{ $no++ }}</th>
+                    <th scope="row">{{ $no++.'.' }}</th>
                     <td>{{ $item->code }}</td>
                     <td>{{ $item->name }}</td>
                 </tr>
               @endforeach
             </tbody>
           </table>
+        </div>
+        <div class="card-footer">
+          <a href="{{ route('penjualan') }}" class="-ml- btn btn-primary shadow-none">
+            <span class="fas fa-arrow-left"></span> Kembali
+          </a>
         </div>
       </div>
 </div>

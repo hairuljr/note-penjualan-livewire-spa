@@ -44,7 +44,7 @@ class Main extends Component
                     "data" => array_to_object([
                         'href' => [
                             'create_new' => route('barang.new'),
-                            'create_new_text' => 'Buat Barang Baru'
+                            'create_new_text' => 'Tambah Barang Baru'
                             // 'export' => '#',
                             // 'export_text' => 'Export'
                         ]

@@ -14,6 +14,10 @@
                     Nama Barang
                     @include('components.sort-icon', ['field' => 'name'])
                 </a></th>
+                <th><a wire:click.prevent="sortBy('price')" role="button" href="#">
+                    Harga Barang
+                    @include('components.sort-icon', ['field' => 'price'])
+                </a></th>
                 <th><a wire:click.prevent="sortBy('created_at')" role="button" href="#">
                     Tanggal Dibuat
                     @include('components.sort-icon', ['field' => 'created_at'])
@@ -27,9 +31,10 @@
             @endphp
             @foreach ($barangs as $barang)
                 <tr x-data="window.__controller.dataTableController({{ $barang->id }})">
-                    <td>{{ $no++ }}</td>
+                    <td>{{ $no++.'.' }}</td>
                     <td>{{ $barang->code }}</td>
                     <td>{{ $barang->name }}</td>
+                    <td>@rupiah($barang->price)</td>
                     <td>{{ $barang->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">
                         <a role="button" href="/barang/edit/{{ $barang->id }}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>

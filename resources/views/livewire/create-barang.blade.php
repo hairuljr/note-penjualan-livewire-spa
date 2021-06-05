@@ -10,6 +10,13 @@
 
         <x-slot name="form">
             <div class="form-group col-span-6 sm:col-span-5">
+                <x-jet-label for="code" value="{{ __('Kode') }}" />
+                <small>Kode Barang</small>
+                <x-jet-input id="code" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="barang.code" />
+                <x-jet-input-error for="barang.code" class="mt-2" />
+            </div>
+
+            <div class="form-group col-span-6 sm:col-span-5">
                 <x-jet-label for="name" value="{{ __('Nama') }}" />
                 <small>Nama Barang</small>
                 <x-jet-input id="name" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="barang.name" />
@@ -17,11 +24,13 @@
             </div>
 
             <div class="form-group col-span-6 sm:col-span-5">
-                <x-jet-label for="code" value="{{ __('Kode') }}" />
-                <small>Kode Barang</small>
-                <x-jet-input id="code" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="barang.code" />
-                <x-jet-input-error for="barang.code" class="mt-2" />
+                <x-jet-label for="price" value="{{ __('Harga') }}" />
+                <small>Harga Barang</small>
+                <x-jet-input id="price" type="number" min="1" class="mt-1 block w-full form-control shadow-none" wire:model.defer="barang.price" />
+                <x-jet-input-error for="barang.price" class="mt-2" />
             </div>
+
+            
         </x-slot>
 
         <x-slot name="actions">
