@@ -27,8 +27,5 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('rupiah', function ($expression) {
             return "Rp. <?= number_format($expression, 0, ',', '.'); ?>";
         });
-        $this->app->bind('path.public', function() {
-            return base_path().'/../public_html/paknong';
-        });
     }
 }

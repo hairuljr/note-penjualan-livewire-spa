@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{BarangController, PenjualanController};
+use App\Http\Controllers\{BarangController, DashboardController, PenjualanController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
-    Route::view('/dashboard', "dashboard")->name('dashboard');
+    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
 
     Route::get('/barang', [ BarangController::class, "index_view" ])->name('barang');
     Route::view('/barang/new', "pages.barang.barang-new")->name('barang.new');

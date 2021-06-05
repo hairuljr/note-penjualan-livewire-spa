@@ -11,14 +11,16 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-primary">
-                  <i class="far fa-user"></i>
+                  <i class="fas fa-dollar-sign"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
                     <h4>Total Penjualan</h4>
                   </div>
                   <div class="card-body">
-                    10
+                    <p class="text-bold" style="font-weight: 700; font-size: 18px;">
+                      @rupiah($total_price->total_price)
+                    </p>
                   </div>
                 </div>
               </div>
@@ -26,14 +28,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-danger">
-                  <i class="far fa-newspaper"></i>
+                  <i class="fas fa-cash-register"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
                     <h4>Total Nota</h4>
                   </div>
                   <div class="card-body">
-                    42
+                    {{ $total_nota }}
                   </div>
                 </div>
               </div>
@@ -41,14 +43,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-warning">
-                  <i class="far fa-file"></i>
+                  <i class="fas fa-coins"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
                     <h4>Total Barang</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                    {{ $total_barang }}
                   </div>
                 </div>
               </div>
@@ -56,14 +58,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-success">
-                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-funnel-dollar"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
                     <h4>Total Jual /hari</h4>
                   </div>
                   <div class="card-body">
-                    47
+                    {{ $total_jual->total_jual }}
                   </div>
                 </div>
               </div>
