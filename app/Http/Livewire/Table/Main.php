@@ -51,6 +51,24 @@ class Main extends Component
                     ])
                 ];
                 break;
+            case 'penjualan':
+                $penjualans = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.penjualan',
+                    "penjualans" => $penjualans,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('penjualan.new'),
+                            'create_new_text' => 'Buat Nota Baru'
+                            // 'export' => '#',
+                            // 'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
 
             default:
                 # code...

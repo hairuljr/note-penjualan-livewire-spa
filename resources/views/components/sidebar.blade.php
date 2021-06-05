@@ -18,6 +18,19 @@ $links = [
         "text" => "Barang",
         "is_multi" => true,
     ],
+    [
+        "href" => [
+            [
+                "section_text" => "Penjualan",
+                "section_list" => [
+                    ["href" => "penjualan", "text" => "Data Penjualan"],
+                    ["href" => "penjualan.new", "text" => "Buat Penjualan"]
+                ]
+            ]
+        ],
+        "text" => "Penjualan",
+        "is_multi" => true,
+    ],
 ];
 $navigation_links = array_to_object($links);
 @endphp
