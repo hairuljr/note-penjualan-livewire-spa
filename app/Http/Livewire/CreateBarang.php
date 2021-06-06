@@ -19,6 +19,7 @@ class CreateBarang extends Component
         ] : [];
 
         return array_merge([
+            'barang.price' => 'required|numeric|min:1',
             'barang.name' => 'required|min:3',
             'barang.code' => 'required|unique:barangs,code'
         ], $rules);
@@ -45,6 +46,7 @@ class CreateBarang extends Component
             ->update([
                 "name" => $this->barang->name,
                 "code" => $this->barang->code,
+                "price" => $this->barang->price,
             ]);
 
         $this->emit('saved');

@@ -23,7 +23,7 @@ class CreatePenjualan extends Component
 
         return array_merge([
             'penjualan.note' => 'required',
-            'penjualan.price' => 'required',
+            'penjualan.price' => 'required|numeric|min:1',
             'penjualan.no_nota' => 'required|unique:penjualans,no_nota'
         ], $rules);
     }

@@ -46,7 +46,7 @@
             <x-jet-action-message class="mr-3" on="saved">
                 {{ __($button['submit_response']) }}
             </x-jet-action-message>
-
+            <x-back-button route="pembelian"></x-back-button>
             <x-jet-button>
                 {{ __($button['submit_text']) }}
             </x-jet-button>

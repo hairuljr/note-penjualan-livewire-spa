@@ -22,7 +22,7 @@ class CreatePembelian extends Component
         ] : [];
 
         return array_merge([
-            'pembelian.price' => 'required',
+            'pembelian.price' => 'required|numeric|min:1',
             'pembelian.note' => 'required',
             'pembelian.no_nota' => 'required|unique:pembelians,no_nota'
         ], $rules);
